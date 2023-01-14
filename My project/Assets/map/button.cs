@@ -33,6 +33,10 @@ public class button : MonoBehaviour
         // Instantiate the model asset
         modelObject = Instantiate(modelAsset) as GameObject;
 
+        Vector3 scale = new Vector3(1, 1, 1);
+        modelObject.transform.localScale = 23*scale;
+
+
         // Position the model in the Unity scene
         modelObject.transform.position = Vector3.zero;
 

@@ -33,13 +33,14 @@ public class importPrefab : MonoBehaviour
         if (assetPath.Length == 0) return; // if user click cancel return
 
         Mesh mesh = AssetDatabase.LoadAssetAtPath<Mesh>(assetPath);
-        GameObject go = new GameObject();
-        go.AddComponent<MeshFilter>();
-        go.AddComponent<MeshRenderer>();
-        go.GetComponent<MeshFilter>().mesh = mesh;
-        go.GetComponent<Renderer>().material.color =  new Color(1, 1, 1, 1);
-        // Instantiate the model asset
-        modelObject = Instantiate(go) as GameObject;
+        GameObject modelObject = new GameObject();
+        modelObject.AddComponent<MeshFilter>();
+        modelObject.AddComponent<MeshRenderer>();
+        modelObject.GetComponent<MeshFilter>().mesh = mesh;
+        modelObject.GetComponent<Renderer>().material.color =  new Color(1, 0, 0, 1);
+        
+        modelObject.AddComponent<prefabMovement>();
+        BoxCollider boxCollider = modelObject.AddComponent<BoxCollider>();
 
         // Position the model in the Unity scene
         modelObject.transform.position = Vector3.zero;

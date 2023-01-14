@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class boardLogic : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 200.0f;
     public Vector2 turn;
     public float sensitivity = 1.5f;
     public GameObject camera;
